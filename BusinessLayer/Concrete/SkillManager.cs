@@ -19,12 +19,12 @@ namespace BusinessLayer.Concrete
             _skillDal = skillDal;
         }
 
-        public List<Skill> GetAll(Expression<Func<Skill, bool>> where)
+        public List<Skill> TGetAll(Expression<Func<Skill, bool>> where)
         {
             return _skillDal.GetAll(where);
         }
 
-        public Skill GetById(int id)
+        public Skill TGetById(int id)
         {
             return _skillDal.GetById(id);
         }

@@ -19,12 +19,12 @@ namespace BusinessLayer.Concrete
             _serviceImageDal = serviceImageDal;
         }
 
-        public List<ServiceImage> GetAll(Expression<Func<ServiceImage, bool>> where)
+        public List<ServiceImage> TGetAll(Expression<Func<ServiceImage, bool>> where)
         {
             return _serviceImageDal.GetAll(where);
         }
 
-        public ServiceImage GetById(int id)
+        public ServiceImage TGetById(int id)
         {
             return _serviceImageDal.GetById(id);
         }

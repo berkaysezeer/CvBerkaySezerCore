@@ -1,12 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace CvBerkaySezerCore.ViewComponents
 {
     public class About : ViewComponent
     {
+        AboutManager aboutManager = new AboutManager(new EfAboutDal());
         public IViewComponentResult Invoke()
         {
-            return View();
+            var about = aboutManager.TGetAll().FirstOrDefault();
+            return View(about);
         }
     }
 }

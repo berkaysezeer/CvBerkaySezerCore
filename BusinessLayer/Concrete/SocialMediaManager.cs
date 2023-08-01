@@ -19,12 +19,12 @@ namespace BusinessLayer.Concrete
             _socialDal = socialDal;
         }
 
-        public List<SocialMedia> GetAll(Expression<Func<SocialMedia, bool>> where)
+        public List<SocialMedia> TGetAll(Expression<Func<SocialMedia, bool>> where)
         {
             return _socialDal.GetAll(where);
         }
 
-        public SocialMedia GetById(int id)
+        public SocialMedia TGetById(int id)
         {
             return _socialDal.GetById(id);
         }

@@ -19,12 +19,12 @@ namespace BusinessLayer.Concrete
             _testimonialDal = testimonialDal;
         }
 
-        public List<Testimonial> GetAll(Expression<Func<Testimonial, bool>> where)
+        public List<Testimonial> TGetAll(Expression<Func<Testimonial, bool>> where)
         {
             return _testimonialDal.GetAll(where);
         }
 
-        public Testimonial GetById(int id)
+        public Testimonial TGetById(int id)
         {
             return _testimonialDal.GetById(id);
         }

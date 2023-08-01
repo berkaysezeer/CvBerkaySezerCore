@@ -19,12 +19,12 @@ namespace BusinessLayer.Concrete
             _headerDal = headerDal;
         }
 
-        public List<Header> GetAll(Expression<Func<Header, bool>> where)
+        public List<Header> TGetAll(Expression<Func<Header, bool>> where)
         {
             return _headerDal.GetAll(where);
         }
 
-        public Header GetById(int id)
+        public Header TGetById(int id)
         {
             return _headerDal.GetById(id);
         }

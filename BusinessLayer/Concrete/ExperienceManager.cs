@@ -19,12 +19,12 @@ namespace BusinessLayer.Concrete
             _experienceDal = experienceDal;
         }
 
-        public List<Experience> GetAll(Expression<Func<Experience, bool>> where)
+        public List<Experience> TGetAll(Expression<Func<Experience, bool>> where)
         {
             return _experienceDal.GetAll(where);
         }
 
-        public Experience GetById(int id)
+        public Experience TGetById(int id)
         {
             return _experienceDal.GetById(id);
         }

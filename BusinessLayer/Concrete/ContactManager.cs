@@ -19,12 +19,12 @@ namespace BusinessLayer.Concrete
             _contactDal = contactDal;
         }
 
-        public List<Contact> GetAll(Expression<Func<Contact, bool>> where)
+        public List<Contact> TGetAll(Expression<Func<Contact, bool>> where)
         {
             return _contactDal.GetAll(where);
         }
 
-        public Contact GetById(int id)
+        public Contact TGetById(int id)
         {
             return _contactDal.GetById(id);
         }

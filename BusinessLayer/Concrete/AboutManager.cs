@@ -19,12 +19,12 @@ namespace BusinessLayer.Concrete
             _aboutDal = aboutDal;
         }
 
-        public List<About> GetAll(Expression<Func<About, bool>> where)
+        public List<About> TGetAll(Expression<Func<About, bool>> where)
         {
             return _aboutDal.GetAll(where);
         }
 
-        public About GetById(int id)
+        public About TGetById(int id)
         {
             return _aboutDal.GetById(id);
         }
