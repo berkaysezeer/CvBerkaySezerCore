@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<!-- upto 2 directory depth-->
+<html lang="en-US">
+@await Html.PartialAsync("HeadPartial")
+<body id="top">
+	@await Html.PartialAsync("NavbarPartial")
+	<div class="page-content">
+		<div id="content">
+
+			@await Component.InvokeAsync("Header")
+
+			@await Component.InvokeAsync("About")
+
+			<div class="section px-3 px-lg-4 pt-5" id="services">
+				<div class="container-narrow">
+					@await Component.InvokeAsync("Service")
+
+					@await Component.InvokeAsync("ServiceImage")
+				</div>
+			</div>
+
+			@await Component.InvokeAsync("Skill")
+
+			@await Component.InvokeAsync("Project")
+
+			@await Component.InvokeAsync("Experience")
+
+			@await Component.InvokeAsync("Contact")
+
+			@await Component.InvokeAsync("Footer")
+		</div>
+	</div>
+	<div id="scrolltop"><a class="btn btn-secondary" href="#top"><span class="icon"><i class="fas fa-angle-up fa-x"></i></span></a></div>
+	<script src="~/template/scripts/imagesloaded.pkgd.min.js?ver=1.2.0"></script>
+	<script src="~/template/scripts/masonry.pkgd.min.js?ver=1.2.0"></script>
+	<script src="~/template/scripts/BigPicture.min.js?ver=1.2.0"></script>
+	<script src="~/template/scripts/purecounter.min.js?ver=1.2.0"></script>
+	<script src="~/template/scripts/bootstrap.bundle.min.js?ver=1.2.0"></script>
+	<script src="~/template/scripts/aos.min.js?ver=1.2.0"></script>
+	<script src="~/template/scripts/main.js?ver=1.2.0"></script>
+</body>
+</html>
