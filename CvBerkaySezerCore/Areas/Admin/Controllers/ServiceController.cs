@@ -13,17 +13,20 @@ namespace CvBerkaySezerCore.Areas.Admin.Controllers
     public class ServiceController : Controller
     {
         ServiceImageManager serviceManager = new ServiceImageManager(new EfServiceImageDal());
+        private readonly string header = "Hizmetler";
 
         public IActionResult Index()
         {
-            var services = serviceManager.TGetAll();
+            ViewBag.Header = header;
 
+            var services = serviceManager.TGetAll();
             return View(services);
         }
 
         [HttpPost]
         public IActionResult Edit(ServiceImage s)
         {
+            ViewBag.Header = header;
             var service = serviceManager.TGetById(s.Id);
 
             if (ModelState.IsValid)
@@ -55,6 +58,7 @@ namespace CvBerkaySezerCore.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Add(AddServiceViewModel s)
         {
+            ViewBag.Header = header;
             if (ModelState.IsValid)
             {
                 //if (Request.Files.Count > 0)

@@ -10,18 +10,22 @@ namespace CvBerkaySezerCore.Areas.Admin.Controllers
 	public class HeaderController : Controller
 	{
 		HeaderManager headerManager = new HeaderManager(new EfHeaderDal());
+        private readonly string head = "Başlık";
 
-		[HttpGet]
+        [HttpGet]
 		public IActionResult Index()
 		{
-			var header = headerManager.TGetAll().FirstOrDefault();
+            ViewBag.Header = head;
+            var header = headerManager.TGetAll().FirstOrDefault();
 			return View(header);
 		}
 
 		[HttpPost]
 		public IActionResult Index(Header h)
 		{
-			var header = headerManager.TGetById(h.Id);
+            ViewBag.Header = head;
+
+            var header = headerManager.TGetById(h.Id);
 
 			if (ModelState.IsValid)
 			{

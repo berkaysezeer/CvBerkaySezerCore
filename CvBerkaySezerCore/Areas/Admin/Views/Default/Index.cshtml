@@ -1,8 +1,10 @@
-﻿
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+﻿@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Index</h1>
-
+<div class="content-header">
+	<div class="container-fluid">
+		@await Component.InvokeAsync("PageHeader", new { header = ViewBag.Header})
+	</div>
+</div>

@@ -12,9 +12,11 @@ namespace CvBerkaySezerCore.Areas.Admin.Controllers
     public class ProjectController : Controller
     {
         ProjectManager projectManager = new ProjectManager(new EfProjectDal());
+        private readonly string header = "Projeler";
 
         public IActionResult Index()
         {
+            ViewBag.Header = header;
             var projects = projectManager.TGetAll();
             return View(projects);
         }
@@ -22,6 +24,7 @@ namespace CvBerkaySezerCore.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Edit(Project p)
         {
+            ViewBag.Header = header;
             var project = projectManager.TGetById(p.Id);
 
             if (ModelState.IsValid)
@@ -53,6 +56,8 @@ namespace CvBerkaySezerCore.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Add(AddProjectViewModel p)
         {
+            ViewBag.Header = header;
+
             if (ModelState.IsValid)
             {
                 //if (Request.Files.Count > 0)
