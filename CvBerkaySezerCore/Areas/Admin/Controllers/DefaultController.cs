@@ -9,10 +9,5 @@ namespace CvBerkaySezerCore.Areas.Admin.Controllers
 		{
 			return View();
 		}
-
-		public PartialViewResult SidebarPartial()
-		{
-			return PartialView();
-		}
 	}
 }
