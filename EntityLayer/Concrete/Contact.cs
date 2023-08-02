@@ -15,5 +15,6 @@ namespace EntityLayer.Concrete
         public string Subject { get; set; }
         public bool IsDeleted { get; set; } = false;
         public bool IsRead { get; set; } = false;
+        public DateTime Date { get; set; }
     }
 }
