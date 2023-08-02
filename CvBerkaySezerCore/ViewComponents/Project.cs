@@ -11,7 +11,7 @@ namespace CvBerkaySezerCore.ViewComponents
 
 		public IViewComponentResult Invoke()
 		{
-			var projects = projectManager.GetAll(x => x.IsDeleted == false).OrderByDescending(x => x.Id).ToList();
+			var projects = projectManager.TGetAll(x => x.IsDeleted == false).OrderByDescending(x => x.Id).ToList();
 			return View(projects);
 		}
 	}

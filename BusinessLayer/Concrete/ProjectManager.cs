@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Abstract;
+﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class ProjectManager : IProjectDal
+    public class ProjectManager : IProjectService
     {
         IProjectDal _projectDal;
 
@@ -19,32 +20,32 @@ namespace BusinessLayer.Concrete
             _projectDal = projectDal;
         }
 
-        public void Delete(Project t)
-        {
-            _projectDal.Delete(t);
-        }
-
-        public List<Project> GetAll()
-        {
-            return _projectDal.GetAll();
-        }
-
-        public List<Project> GetAll(Expression<Func<Project, bool>> where)
-        {
-            return _projectDal.GetAll(where);
-        }
-
-        public Project GetById(int id)
-        {
-            return _projectDal.GetById(id);
-        }
-
-        public void Insert(Project t)
+        public void TAdd(Project t)
         {
             _projectDal.Insert(t);
         }
 
-        public void Update(Project t)
+        public void TDelete(Project t)
+        {
+            _projectDal.Delete(t);
+        }
+
+        public List<Project> TGetAll()
+        {
+            return _projectDal.GetAll();
+        }
+
+        public List<Project> TGetAll(Expression<Func<Project, bool>> where)
+        {
+            return _projectDal.GetAll(where);
+        }
+
+        public Project TGetById(int id)
+        {
+            return _projectDal.GetById(id);
+        }
+
+        public void TUpdate(Project t)
         {
             _projectDal.Update(t);
         }

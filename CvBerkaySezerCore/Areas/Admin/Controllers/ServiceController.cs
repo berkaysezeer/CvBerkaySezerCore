@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using CvBerkaySezerCore.ViewModels;
 using CvBerkaySezerCore.Areas.Admin.ViewComponents;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
@@ -21,7 +22,7 @@ namespace CvBerkaySezerCore.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(ServiceImage s)
+        public IActionResult Edit(ServiceImage s)
         {
             var service = serviceManager.TGetById(s.Id);
 
@@ -52,7 +53,7 @@ namespace CvBerkaySezerCore.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add(AddServiceViewModel s)
+        public IActionResult Add(AddServiceViewModel s)
         {
             if (ModelState.IsValid)
             {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CvBerkaySezerCore.Areas.Admin.ViewComponents
+namespace CvBerkaySezerCore.ViewModels
 {
     public class AddServiceViewModel
     {
