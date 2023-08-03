@@ -10,6 +10,7 @@ namespace EntityLayer.Concrete
     {
         public int Id { get; set; }
         public string Title { get; set; }
+        public string ImageUrl { get; set; }
         public int Rate { get; set; }
         public bool IsDeleted { get; set; } = false;
     }
