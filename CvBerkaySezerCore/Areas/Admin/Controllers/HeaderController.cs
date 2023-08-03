@@ -1,8 +1,11 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using FluentValidation.Validators;
 using System.Linq;
+using FluentValidation.Results;
 
 namespace CvBerkaySezerCore.Areas.Admin.Controllers
 {
@@ -24,16 +27,25 @@ namespace CvBerkaySezerCore.Areas.Admin.Controllers
 		public IActionResult Index(Header h)
 		{
             ViewBag.Header = head;
+			HeaderValidator validations = new HeaderValidator();
+			ValidationResult result = validations.Validate(h); 
 
             var header = headerManager.TGetById(h.Id);
 
-			if (ModelState.IsValid)
+			if (result.IsValid)
 			{
 				header.Name = h.Name.Trim();
 				header.Title = h.Title.Trim();
 				header.Head = h.Head.Trim();
 
 				headerManager.TUpdate(header);
+			}
+			else
+			{
+				foreach (var item in result.Errors)
+				{
+					ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+				}
 			}
 
 			return View(header);

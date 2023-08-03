@@ -6,5 +6,7 @@
 <div class="content-header">
 	<div class="container-fluid">
 		@await Component.InvokeAsync("PageHeader", new { header = ViewBag.Header})
+
+		@await Component.InvokeAsync("Dashboard", new { header = ViewBag.Header})
 	</div>
 </div>

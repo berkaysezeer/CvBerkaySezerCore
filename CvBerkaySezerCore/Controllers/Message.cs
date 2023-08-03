@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
@@ -14,7 +16,15 @@ namespace CvBerkaySezerCore.Controllers
 		public IActionResult Add(Contact c)
 		{
 			c.Date = DateTime.Now;
-			if (ModelState.IsValid) contactManager.TAdd(c);
+
+			ContactValidator validations = new ContactValidator();
+			ValidationResult result = validations.Validate(c);
+
+			if (result.IsValid)
+			{
+				contactManager.TAdd(c);
+			}
+
 			return RedirectToAction("Index", "Default");
 		}
 	}
