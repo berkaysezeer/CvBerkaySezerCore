@@ -8,13 +8,16 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.ValidationRules
 {
-	public class SkillValidator : AbstractValidator<Skill>
+	public class ServiceImageValidator : AbstractValidator<ServiceImage>
 	{
-		public SkillValidator()
+		public ServiceImageValidator()
 		{
 			RuleFor(x => x.Title)
 				.NotEmpty().WithMessage("Başlık alanı boş geçilemez")
-				.MaximumLength(20).WithMessage("Maksimum 20 karakter girebilirsiniz");
+				.MaximumLength(30).WithMessage("Maksimum 30 karakter girebilirsiniz");
+
+			RuleFor(x => x.ImageUrl)
+				.NotEmpty().WithMessage("Grösel alanı boş geçilemez");
 		}
 	}
 }
