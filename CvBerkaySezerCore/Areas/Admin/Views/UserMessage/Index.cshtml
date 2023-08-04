@@ -1,0 +1,76 @@
+﻿@using EntityLayer.Concrete
+@model List<UserMessage>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content-header">
+    <div class="container-fluid">
+        @await Component.InvokeAsync("PageHeader", new { header = ViewBag.Header})
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table id="tblUserMessages" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Kullanıcı</th>
+                                    <th>Konu</th>
+                                    <th>Mesaj</th>
+                                    <th>Durum</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var message in Model)
+                                {
+                                    <tr>
+                                        <td>@message.User.FirstName @message.User.LastName</td>
+                                        <td>@message.Subject</td>
+                                        <td>@message.Message </td>
+                                        <td>
+                                            @if (message.IsRead)
+                                            {
+                                                <span class="badge badge-sunccess">Okundu</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-danger">Okunmadı</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            <a href="/Admin/UserMessage/Detail" class="btn btn-outline-primary btn-sm">Detay</a>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/template/admin/content/plugins/jquery/jquery.min.js"></script>
+
+<script>
+    $(function () {
+        $("#tblUserMessages").DataTable({
+            order: [[4, 'asc']],
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.12/i18n/Turkish.json"
+            }
+        });
+
+    });</script>

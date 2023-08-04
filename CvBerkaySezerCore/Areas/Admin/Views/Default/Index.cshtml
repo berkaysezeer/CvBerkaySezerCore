@@ -1,12 +1,14 @@
 ﻿@{
-	ViewData["Title"] = "Index";
-	Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
 <div class="content-header">
-	<div class="container-fluid">
-		@await Component.InvokeAsync("PageHeader", new { header = ViewBag.Header})
+    <div class="container-fluid">
+        @await Component.InvokeAsync("PageHeader", new { header = ViewBag.Header})
 
-		@await Component.InvokeAsync("Dashboard", new { header = ViewBag.Header})
-	</div>
+        @await Component.InvokeAsync("Dashboard")
+
+        @await Component.InvokeAsync("DashboardProject")
+    </div>
 </div>
