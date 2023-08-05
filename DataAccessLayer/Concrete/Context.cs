@@ -13,7 +13,8 @@ namespace DataAccessLayer.Concrete
         //.net framework'te web.config'e bağlantı stringi yazılıyordu. Core'da web.config olmadığı için Context classına OnConfiguring ile ekliyoruz
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=localhost\\MSSQLSERVER01;database=DbCoreBerkaySezer;integrated security=true");
+            //optionsBuilder.UseSqlServer("server=localhost\\MSSQLSERVER01;database=DbCoreBerkaySezer;integrated security=true");
+            optionsBuilder.UseSqlServer("server=localhost\\SQLEXPRESS;database=DbCoreBerkaySezer;integrated security=true");
             base.OnConfiguring(optionsBuilder);
         }
 

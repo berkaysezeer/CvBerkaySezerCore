@@ -56,7 +56,16 @@ namespace CvBerkaySezerCore
 				);
 			});
 
-			app.UseEndpoints(endpoints =>
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                  name: "Writer",
+                  pattern: "{area:exists}/{controller=Default}/{action=Index}/{id?}"
+                );
+            });
+
+
+            app.UseEndpoints(endpoints =>
 			{
 				endpoints.MapControllerRoute(
 					name: "default",
