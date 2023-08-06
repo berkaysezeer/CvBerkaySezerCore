@@ -37,19 +37,33 @@
                             {
                                 <div class="form-row">
                                     @Html.TextBox("FirstName", "",new{@class = "form-control form-control-lg", @placeholder = "Ad"})
+                                    @Html.ValidationMessage("FirstName", "", new { @class = "small", @style = "color:red" })
                                 </div>
                                 <div class="form-row mt-3">
                                     @Html.TextBox("LastName", "",new{@class = "form-control form-control-lg", @placeholder = "Soyad"})
+                                    @Html.ValidationMessage("LastName", "", new { @class = "small", @style = "color:red" })
                                 </div>
                                 <div class="form-row mt-3">
                                     @Html.TextBox("Username", "",new{@class = "form-control form-control-lg", @placeholder = "Kullanıcı Adı"})
+                                    @Html.ValidationMessage("Username", "", new { @class = "small", @style = "color:red" })
                                 </div>
                                 <div class="form-row mt-3">
                                     @Html.TextBox("Password", "",new{@class = "form-control form-control-lg", @placeholder = "Şifre", @type="password"})
+                                    @Html.ValidationMessage("Password", "", new { @class = "small", @style = "color:red" })
+                                </div>
+                                <div class="form-row mt-3">
+                                    @Html.TextBox("ConfirmPassword", "",new{@class = "form-control form-control-lg", @placeholder = "Şifreyi Onayla", @type="password"})
+                                    @Html.ValidationMessage("ConfirmPassword", "", new { @class = "small", @style = "color:red" })
                                 </div>
                                 <div class="form-row mt-3">
                                     @Html.TextBox("Email", "",new{@class = "form-control form-control-lg", @placeholder = "E-posta"})
+                                    @Html.ValidationMessage("Email", "", new { @class = "small", @style = "color:red" })
                                 </div>
+
+                                <div class="form-row mt-3 text-danger" asp-validation-summary="ModelOnly">
+
+                                </div>
+
                                 <div class="form-row mt-3">
                                     <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">KAYIT OL</button>
                                 </div>

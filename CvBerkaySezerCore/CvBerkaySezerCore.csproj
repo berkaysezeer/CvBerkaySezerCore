@@ -2898,6 +2898,8 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
       <PrivateAssets>all</PrivateAssets>
@@ -2919,7 +2921,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Writer\Data\" />
-    <Folder Include="Areas\Writer\Models\" />
     <Folder Include="wwwroot\Template\Writer\.git\objects\info\" />
     <Folder Include="wwwroot\Template\Writer\.git\objects\pack\" />
     <Folder Include="wwwroot\Template\Writer\.git\refs\tags\" />
