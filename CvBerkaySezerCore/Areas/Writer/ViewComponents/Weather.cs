@@ -10,7 +10,7 @@ namespace CvBerkaySezerCore.Areas.Writer.ViewComponents
     {
         public IViewComponentResult Invoke()
         {
-            string apiKey = "f326293d48afd27df13cced30b40febe";
+            string apiKey = "";
             string connection = $"https://api.openweathermap.org/data/2.5/weather?q=ankara&appid={apiKey}&mode=xml&lang=tr&units=metric";
             XDocument document = XDocument.Load(connection);
             string temp = document.Descendants("temperature").ElementAt(0).Attribute("value").Value;
