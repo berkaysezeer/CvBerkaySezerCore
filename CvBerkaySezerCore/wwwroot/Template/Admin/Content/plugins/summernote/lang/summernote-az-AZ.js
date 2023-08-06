@@ -152,8 +152,8 @@ return /******/ (function(modules) { // webpackBootstrap
         dragImageHere: 'Bura sürüşdür',
         dropImage: 'Şəkil və ya mətni buraxın',
         selectFromFiles: 'Sənəd seçin',
-        maximumFileSize: 'Maksimum sənəd ölçüsü',
-        maximumFileSizeError: 'Maksimum sənəd ölçüsünü keçdiniz.',
+        maximumFileSize: 'En fazla sənəd ölçüsü',
+        maximumFileSizeError: 'En fazla sənəd ölçüsünü keçdiniz.',
         url: 'Şəkil linki',
         remove: 'Şəkli sil',
         original: 'Original'

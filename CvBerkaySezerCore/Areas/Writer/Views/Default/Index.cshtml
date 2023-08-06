@@ -1,14 +1,28 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Writer/Views/Shared/_WriterLayout.cshtml";
 }
 
 <div class="row">
-    <div class="col-md-12">
-        <h1>
-            Ana Sayfa
-        </h1>
+    <div class="col-md-4 grid-margin stretch-card">
+        <div class="card tale-bg">
+            <div class="card-people mt-auto">
+                <img src="~/template/writer/images/dashboard/people.svg" alt="people">
+                <div class="weather-info">
+                    <div class="d-flex">
+                        <div>
+                            <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>38<sup>C</sup></h2>
+                        </div>
+                        <div class="ml-2">
+                            <h4 class="location font-weight-normal">Türkiye</h4>
+                            <h6 class="font-weight-normal">Ankara</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        @await Component.InvokeAsync("Announcement")
     </div>
 </div>
-

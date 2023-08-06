@@ -14,7 +14,7 @@ namespace BusinessLayer.ValidationRules
 		{
 			RuleFor(x => x.Url)
 			.NotEmpty().WithMessage("Url alanı boş geçilemez")
-			.MaximumLength(50).WithMessage("Maksimum 50 karakter girebilirisiz");
+			.MaximumLength(50).WithMessage("En fazla 50 karakter girebilirisiz");
 
 			RuleFor(x => x.Icon)
 			.NotEmpty().WithMessage("Url alanı boş geçilemez");

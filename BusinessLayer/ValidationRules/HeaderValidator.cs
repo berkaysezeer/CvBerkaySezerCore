@@ -14,15 +14,15 @@ namespace BusinessLayer.ValidationRules
 		{
 			RuleFor(x => x.Head)
 			  .NotEmpty().WithMessage("Başlık alanı boş geçilemez")
-			  .MaximumLength(20).WithMessage("Maksimum 20 karakter girebilirsiniz");
+			  .MaximumLength(20).WithMessage("En fazla 20 karakter girebilirsiniz");
 
 			RuleFor(x => x.Title)
 			  .NotEmpty().WithMessage("Ünvan alanı boş geçilemez")
-			  .MaximumLength(50).WithMessage("Maksimum 50 karakter girebilirsiniz");
+			  .MaximumLength(50).WithMessage("En fazla 50 karakter girebilirsiniz");
 
 			RuleFor(x => x.Name)
 			  .NotEmpty().WithMessage("Ad Soyad alanı boş geçilemez")
-			  .MaximumLength(30).WithMessage("Maksimum 30 karakter girebilirsiniz");
+			  .MaximumLength(30).WithMessage("En fazla 30 karakter girebilirsiniz");
 		}
 	}
 }

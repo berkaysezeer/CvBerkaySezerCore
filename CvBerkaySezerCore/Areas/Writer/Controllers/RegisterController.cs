@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Concrete;
 using CvBerkaySezerCore.Areas.Writer.Models;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 namespace CvBerkaySezerCore.Areas.Writer.Controllers
 {
     [Area("Writer")]
+    [AllowAnonymous]
     public class RegisterController : Controller
     {
         private readonly UserManager<WriterUser> _userManager;

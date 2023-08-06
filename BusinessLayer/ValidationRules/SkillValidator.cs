@@ -14,7 +14,7 @@ namespace BusinessLayer.ValidationRules
 		{
 			RuleFor(x => x.Title)
 				.NotEmpty().WithMessage("Başlık alanı boş geçilemez")
-				.MaximumLength(20).WithMessage("Maksimum 20 karakter girebilirsiniz");
+				.MaximumLength(20).WithMessage("En fazla 20 karakter girebilirsiniz");
 		}
 	}
 }

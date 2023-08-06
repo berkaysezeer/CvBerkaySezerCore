@@ -24,7 +24,7 @@ $.extend( $.validator.messages, {
 	equalTo: "Skriv samme verdi igjen.",
 	maxlength: $.validator.format( "Maksimalt {0} tegn." ),
 	minlength: $.validator.format( "Minimum {0} tegn." ),
-	rangelength: $.validator.format( "Angi minimum {0} og maksimum {1} tegn." ),
+	rangelength: $.validator.format( "Angi minimum {0} og En fazla {1} tegn." ),
 	range: $.validator.format( "Angi en verdi mellom {0} og {1}." ),
 	max: $.validator.format( "Angi en verdi som er mindre eller lik {0}." ),
 	min: $.validator.format( "Angi en verdi som er st&oslash;rre eller lik {0}." ),

@@ -1,0 +1,88 @@
+﻿@using CvBerkaySezerCore.Areas.Writer.Models
+@model UserEditViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Writer/Views/Shared/_WriterLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Profilim</h4>
+                <p class="card-description">
+                    Profil Bilgilerini Düzenle
+                </p>
+                @using (Html.BeginForm("Index", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            @Html.LabelFor(x=>x.FirstName, "Ad", new {@class=""})
+                            @Html.TextBoxFor(x=>x.FirstName, "",new{@class = "form-control"})
+                            @Html.ValidationMessageFor(x=>x.FirstName, "", new { @class = "small", @style = "color:red" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.LabelFor(x=>x.LastName, "Soyad", new {@class=""})
+                            @Html.TextBoxFor(x=>x.LastName, "",new{@class = "form-control", @placeholder = "Soyad"})
+                            @Html.ValidationMessageFor(x=>x.LastName, "", new { @class = "small", @style = "color:red" })
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            @Html.LabelFor(x=>x.UserName, "Kullanıcı Adı", new {@class=""})
+                            @Html.TextBoxFor(x=>x.UserName, "",new{@class = "form-control", @placeholder = "Kullanıcı Adı"})
+                            @Html.ValidationMessageFor(x=>x.UserName, "", new { @class = "small", @style = "color:red" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.Label("Password", "Şifre", new {@class=""})
+                            @Html.TextBox("Password", "",new{@class = "form-control", @placeholder = "Şifre", @type="password"})
+                            @Html.ValidationMessage("Password", "", new { @class = "small", @style = "color:red" })
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            @Html.LabelFor(x=>x.Email, "E-posta", new {@class=""})
+                            @Html.TextBoxFor(x=>x.Email, "",new{@class = "form-control", @placeholder = "E-posta"})
+                            @Html.ValidationMessageFor(x=>x.Email, "", new { @class = "small", @style = "color:red" })
+                        </div>
+                    </div>
+                    <div class="form-row mt-2">
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="Image" name="Image"
+                                           aria-describedby="inputGroupFileAddon01">
+                                    <label class="custom-file-label" for="inputGroupFile01">Dosya Seç</label>
+                                </div>
+                            </div>
+                        </div>
+                        @*<label>Resim Seç</label>*@
+                        @* <input type="file" asp-for="Image">*@
+
+                    </div>
+                    <div class="form-row text-danger" asp-validation-summary="ModelOnly">
+                    </div>
+
+                    <div class="form-row mt-2">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-primary">Kaydet</button>
+                        </div>
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+@*Berkay251007!*@
+
+<script src="~/template/writer/vendors/jquery/jquery.min.js"></script>
+
+<script>
+    $('#Image').on('change', function () {
+        var fileName = $(this).val();
+        var cleanFileName = fileName.replace('C:\\fakepath\\', " ");
+        $(this).next('.custom-file-label').html(cleanFileName);
+    })
+
+</script>

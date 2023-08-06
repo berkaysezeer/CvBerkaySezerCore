@@ -5,6 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Template\Writer\vendors\jquery\core.js" />
+    <Content Remove="wwwroot\Template\Writer\vendors\jquery\jquery.js" />
+    <Content Remove="wwwroot\Template\Writer\vendors\jquery\jquery.min.js" />
+    <Content Remove="wwwroot\Template\Writer\vendors\jquery\jquery.min.map" />
+    <Content Remove="wwwroot\Template\Writer\vendors\jquery\jquery.slim.js" />
+    <Content Remove="wwwroot\Template\Writer\vendors\jquery\jquery.slim.min.js" />
+    <Content Remove="wwwroot\Template\Writer\vendors\jquery\jquery.slim.min.map" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\Template\Admin\Content\.babelrc" />
     <None Include="wwwroot\Template\Admin\Content\.browserslistrc" />
     <None Include="wwwroot\Template\Admin\Content\.editorconfig" />
@@ -2894,6 +2904,13 @@
     <None Include="wwwroot\Template\Writer\.git\objects\ff\d98f3202a76f0970358f2906defbff88b3365b" />
     <None Include="wwwroot\Template\Writer\.git\refs\heads\main" />
     <None Include="wwwroot\Template\Writer\.git\refs\remotes\origin\main" />
+    <None Include="wwwroot\Template\Writer\vendors\jquery\core.js" />
+    <None Include="wwwroot\Template\Writer\vendors\jquery\jquery.js" />
+    <None Include="wwwroot\Template\Writer\vendors\jquery\jquery.min.js" />
+    <None Include="wwwroot\Template\Writer\vendors\jquery\jquery.min.map" />
+    <None Include="wwwroot\Template\Writer\vendors\jquery\jquery.slim.js" />
+    <None Include="wwwroot\Template\Writer\vendors\jquery\jquery.slim.min.js" />
+    <None Include="wwwroot\Template\Writer\vendors\jquery\jquery.slim.min.map" />
   </ItemGroup>
 
   <ItemGroup>
@@ -2921,6 +2938,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Writer\Data\" />
+    <Folder Include="wwwroot\Images\User\" />
     <Folder Include="wwwroot\Template\Writer\.git\objects\info\" />
     <Folder Include="wwwroot\Template\Writer\.git\objects\pack\" />
     <Folder Include="wwwroot\Template\Writer\.git\refs\tags\" />

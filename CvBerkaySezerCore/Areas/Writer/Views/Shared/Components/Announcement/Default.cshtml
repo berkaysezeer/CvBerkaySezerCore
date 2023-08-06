@@ -1,0 +1,36 @@
+﻿@using EntityLayer.Concrete
+@model List<Announcement>
+
+@{
+    string color = "";
+
+}
+
+<div class="card">
+    <div class="card-body">
+
+        @foreach (var ann in Model)
+        {
+            if (ann.Status == "Sistem")
+            {
+                color = "badge badge-danger";
+            }
+            else if (ann.Status == "Yeni Yazı")
+            {
+                color = "badge badge-success";
+            }
+
+            <h4 class="card-title">
+                <a href="/Writer/Announcement/Detail/@ann.Id">
+                    @ann.Title
+                </a>
+                <small class="text-muted">@ann.Date.ToString("dd.MM.yyyy HH:mm")</small>
+            </h4>
+            <p class="font-weight-500">@(ann.Content.Length > 170 ? ann.Content.Substring(0, 167) + "..." : ann.Content)</p>
+            <div class="@color">@ann.Status</div>
+            <hr />
+        }
+
+
+    </div>
+</div>
