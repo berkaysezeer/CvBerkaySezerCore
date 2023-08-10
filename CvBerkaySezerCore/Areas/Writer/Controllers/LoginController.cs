@@ -40,5 +40,14 @@ namespace CvBerkaySezerCore.Areas.Writer.Controllers
 
             return View();
         }
+
+
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Login", new { area = "Writer" });
+        }
+
     }
 }
+//https://localhost:44371/

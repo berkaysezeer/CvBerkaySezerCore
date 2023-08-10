@@ -6,11 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using FluentValidation.Validators;
 using System.Linq;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace CvBerkaySezerCore.Areas.Admin.Controllers
 {
 	[Area("Admin")]
-	public class HeaderController : Controller
+    [Authorize(Roles = "Admin")]
+    public class HeaderController : Controller
 	{
 		HeaderManager headerManager = new HeaderManager(new EfHeaderDal());
         private readonly string head = "Başlık";

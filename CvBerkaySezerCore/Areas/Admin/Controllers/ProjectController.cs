@@ -2,6 +2,7 @@
 using CvBerkaySezerCore.ViewModels;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 namespace CvBerkaySezerCore.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class ProjectController : Controller
     {
         ProjectManager projectManager = new ProjectManager(new EfProjectDal());

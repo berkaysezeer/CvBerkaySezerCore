@@ -6,10 +6,13 @@ using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace CvBerkaySezerCore.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class SkillController : Controller
     {
         SkillManager skillManager = new SkillManager(new EfSkillDal());

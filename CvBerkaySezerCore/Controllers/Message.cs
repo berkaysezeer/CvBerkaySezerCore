@@ -3,11 +3,13 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
 namespace CvBerkaySezerCore.Controllers
 {
+	[AllowAnonymous]
 	public class Message : Controller
 	{
 		ContactManager contactManager = new ContactManager(new EfContactDal());

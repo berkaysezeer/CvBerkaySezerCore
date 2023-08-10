@@ -6,10 +6,13 @@ using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace CvBerkaySezerCore.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class ServiceController : Controller
     {
         ServiceImageManager serviceManager = new ServiceImageManager(new EfServiceImageDal());
